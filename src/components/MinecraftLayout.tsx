@@ -8,14 +8,13 @@ import PortalOverlay from './PortalOverlay';
 export default function MinecraftLayout({ children }: { children: React.ReactNode }) {
     const [day, setDay] = useState(true);
     const [isEntered, setIsEntered] = useState(false);
-    const [cloudCount] = useState(6);
-    const [clouds] = useState(
-        Array.from({ length: cloudCount }, () => ({
-            top: `${Math.random() * 30 + 2}vh`,
-            duration: 30 + Math.random() * 20,
-            delay: Math.random() * 10
-        }))
-    );
+
+    const cloudCount = 6;
+    const clouds = Array.from({ length: cloudCount }, () => ({
+        top: `${Math.random() * 30 + 2}vh`,
+        duration: 30 + Math.random() * 20,
+        delay: Math.random() * 10
+    }));
 
     useEffect(() => {
         const hour = new Date().getHours();
@@ -75,20 +74,12 @@ export default function MinecraftLayout({ children }: { children: React.ReactNod
             </AnimatePresence>
 
             {/* Toggle Button */}
-            {isEntered && (
-                <ToggleDayNight day={day} toggle={toggleDayNight} />
-            )}
+            {isEntered && <ToggleDayNight day={day} toggle={toggleDayNight} />}
 
             {/* Portal Overlay */}
-            <AnimatePresence>
-                {!isEntered && (
-                    <PortalOverlay
-                        onEnter={() => {
-                            setIsEntered(true);
-                        }}
-                    />
-                )}
-            </AnimatePresence>
+            {!isEntered && <PortalOverlay day={day} onEnter={() => {
+                setIsEntered(true);
+            }} />}
 
             {/* CONTENT */}
             {isEntered && (

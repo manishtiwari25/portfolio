@@ -5,10 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 interface PortalOverlayProps {
+    day: boolean;
     onEnter: () => void;
 }
 
-export default function PortalOverlay({ onEnter }: PortalOverlayProps) {
+export default function PortalOverlay({ day, onEnter }: PortalOverlayProps) {
     const [clicked, setClicked] = useState(false);
 
     const handleClick = () => {
@@ -38,7 +39,6 @@ export default function PortalOverlay({ onEnter }: PortalOverlayProps) {
 
     return (
         <AnimatePresence>
-            {/* Intro panel */}
             {!clicked && (
                 <motion.div
                     className="fixed inset-0 bg-gradient-to-b flex flex-col justify-center items-center z-50 px-4"
@@ -47,7 +47,7 @@ export default function PortalOverlay({ onEnter }: PortalOverlayProps) {
                     exit={{ opacity: 0 }}
                 >
                     <motion.div
-                        className="relative z-10 nes-container is-rounded with-title bg-white w-full max-w-md p-6 shadow-lg"
+                        className={`relative z-10 nes-container ${day ? "" : "is-dark"} is-centered is-rounded with-title bg-white w-full max-w-md p-6 shadow-lg`}
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.5 }}
@@ -81,7 +81,6 @@ export default function PortalOverlay({ onEnter }: PortalOverlayProps) {
                 </motion.div>
             )}
 
-            {/* Block ring animation */}
             {clicked && (
                 <motion.div
                     className="fixed inset-0 bg-black flex justify-center items-center z-50"
