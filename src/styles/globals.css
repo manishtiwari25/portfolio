@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import "../../node_modules/nes.css/css/nes.css";
+
+
+.minecraft-world {
+  /* fill the container once, no tiling */
+  background-repeat: no-repeat;
+  background-size: cover;   /* or “100% 100%” */
+
+  /* a sharp, blocky gradient: sky → grass → dirt → stone */
+  background-image: linear-gradient(
+    to bottom,
+    /* sky  0–60% of height */
+    #6db1ff   0%,
+    #6db1ff  60%,
+
+    /* grass 60–64% */
+    #8bcc53  60%,
+    #8bcc53  64%,
+
+    /* dirt 64–94% */
+    #7a674d  64%,
+    #7a674d  94%,
+
+    /* stone 94–100% */
+    #616161  94%,
+    #616161 100%
+  );
+
+  /* force any “pixels” you place on top to stay crisp */
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+
+.chunk {
+  @apply border-4 border-black bg-gray-100 p-6 my-8 mx-auto max-w-4xl;
+}
+
+@keyframes swirl {
+  0%   { transform: scale(0)   rotate(0deg);   opacity: 0.8; }
+  100% { transform: scale(1.5) rotate(360deg); opacity: 0;   }
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
