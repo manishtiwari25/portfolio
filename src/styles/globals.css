@@ -1,36 +1,35 @@
 @import "tailwindcss";
 @import "../../node_modules/nes.css/css/nes.css";
 
-
-.minecraft-world {
-  /* fill the container once, no tiling */
-  background-repeat: no-repeat;
-  background-size: cover;   /* or “100% 100%” */
-
-  /* a sharp, blocky gradient: sky → grass → dirt → stone */
+.minecraft-world.day {
   background-image: linear-gradient(
     to bottom,
-    /* sky  0–60% of height */
-    #6db1ff   0%,
-    #6db1ff  60%,
-
-    /* grass 60–64% */
-    #8bcc53  60%,
-    #8bcc53  64%,
-
-    /* dirt 64–94% */
-    #7a674d  64%,
-    #7a674d  94%,
-
-    /* stone 94–100% */
-    #616161  94%,
+    #6db1ff 0%,
+    #6db1ff 60%,
+    #8bcc53 60%,
+    #8bcc53 64%,
+    #7a674d 64%,
+    #7a674d 94%,
+    #616161 94%,
     #616161 100%
   );
-
-  /* force any “pixels” you place on top to stay crisp */
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
 }
+
+.minecraft-world.night {
+  background-image: linear-gradient(
+    to bottom,
+    #0d0b1e 0%,
+    #000000 60%,
+    #2a4a2a 60%,
+    #2a4a2a 64%,
+    #3d3228 64%,
+    #3d3228 94%,
+    #1a1a1a 94%,
+    #1a1a1a 100%
+  );
+}
+
+
 
 
 .chunk {

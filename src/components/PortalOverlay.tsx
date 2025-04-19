@@ -1,35 +1,47 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 interface PortalOverlayProps {
-    onEnter: () => void
+    onEnter: () => void;
 }
 
 export default function PortalOverlay({ onEnter }: PortalOverlayProps) {
-    const [clicked, setClicked] = useState(false)
+    const [clicked, setClicked] = useState(false);
 
-    const handleClick = () => setClicked(true)
+    const handleClick = () => {
+        setClicked(true);
+    };
 
-    // Generate positions for a ring of blocks
+    // Generate ring of blocks
     const ringOffsets = Array.from({ length: 16 }).map((_, i) => {
-        const angle = (i / 16) * Math.PI * 2
-        const radius = 50
+        const angle = (i / 16) * Math.PI * 2;
+        const radius = 50;
         return {
             x: Math.round(Math.cos(angle) * radius),
             y: Math.round(Math.sin(angle) * radius),
+        };
+    });
+
+    // Safely trigger onEnter after animation ends
+    useEffect(() => {
+        if (clicked) {
+            const timeout = setTimeout(() => {
+                onEnter();
+            }, ringOffsets.length * 50 + 800); // 50ms per block + 800ms explosion
+
+            return () => clearTimeout(timeout);
         }
-    })
+    }, [clicked, onEnter, ringOffsets.length]);
 
     return (
         <AnimatePresence>
-            {/* Initial Welcome UI */}
+            {/* Intro panel */}
             {!clicked && (
                 <motion.div
-                    className="fixed inset-0 bg-gradient-to-b
-                     flex flex-col justify-center items-center z-50 px-4"
+                    className="fixed inset-0 bg-gradient-to-b flex flex-col justify-center items-center z-50 px-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -56,7 +68,11 @@ export default function PortalOverlay({ onEnter }: PortalOverlayProps) {
                         <div className="text-center mt-4">
                             <button
                                 className="nes-btn is-success font-pixel"
-                                onClick={handleClick}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    handleClick();
+                                }}
                             >
                                 EXPLORE MY WORK
                             </button>
@@ -65,7 +81,7 @@ export default function PortalOverlay({ onEnter }: PortalOverlayProps) {
                 </motion.div>
             )}
 
-            {/* Minecraft‑style block ring portal */}
+            {/* Block ring animation */}
             {clicked && (
                 <motion.div
                     className="fixed inset-0 bg-black flex justify-center items-center z-50"
@@ -91,17 +107,8 @@ export default function PortalOverlay({ onEnter }: PortalOverlayProps) {
                             }}
                         />
                     ))}
-                    {/* Trigger onEnter once the last block finishes */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 0 }}
-                        transition={{
-                            delay: ringOffsets.length * 0.05 + 0.8,
-                        }}
-                        onAnimationComplete={onEnter}
-                    />
                 </motion.div>
             )}
         </AnimatePresence>
-    )
+    );
 }
