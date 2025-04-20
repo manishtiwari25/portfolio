@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Manish Tiwari",
-  description: "Showcasing my projects and skills",
+  title: siteConfig.name,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ToggleDayNight from './ToggleDayNight';
 import PortalOverlay from './PortalOverlay';
 
-export default function MinecraftLayout({ children }: { children: React.ReactNode }) {
+export default function MinecraftLayout({ children, setDayOrNight }: { children: React.ReactNode, setDayOrNight: any }) {
     const [day, setDay] = useState(true);
     const [isEntered, setIsEntered] = useState(false);
 
@@ -29,6 +29,10 @@ export default function MinecraftLayout({ children }: { children: React.ReactNod
             return newDay;
         });
     };
+
+    useEffect(() => {
+        setDayOrNight(day);
+    }, [day, setDayOrNight]);
 
     return (
         <motion.div
@@ -99,7 +103,7 @@ export default function MinecraftLayout({ children }: { children: React.ReactNod
 
             {/* CONTENT */}
             {isEntered && (
-                <main className="relative z-20 px-4 py-8">{children}</main>
+                <div className="relative z-20 px-4 py-8">{children}</div>
             )}
 
             {/* FOOTER */}

@@ -30,12 +30,6 @@
 }
 
 
-
-
-.chunk {
-  @apply border-4 border-black bg-gray-100 p-6 my-8 mx-auto max-w-4xl;
-}
-
 @keyframes swirl {
   0%   { transform: scale(0)   rotate(0deg);   opacity: 0.8; }
   100% { transform: scale(1.5) rotate(360deg); opacity: 0;   }
@@ -43,4 +37,52 @@
 
 .pixelated {
   image-rendering: pixelated;
+}
+/* Default NES-style progress (light mode or default) */
+.nes-progress {
+  color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  border-image: url("data:image/svg+xml;utf8,<svg%20version='1.1'%20width='5'%20height='5'%20xmlns='http://www.w3.org/2000/svg'><path%20d='M2%201%20h1%20v1%20h-1%20z%20M1%202%20h1%20v1%20h-1%20z%20M3%202%20h1%20v1%20h-1%20z%20M2%203%20h1%20v1%20h-1%20z'%20fill='rgb(33,37,41)'/></svg>") 2 / 2 / 2;
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+}
+
+/* Make sure the bar color stands out */
+.nes-progress::-webkit-progress-bar {
+  background-color: #ffffff;
+}
+.nes-progress::-webkit-progress-value {
+  background-color: #4caf50;
+}
+.nes-progress::-moz-progress-bar {
+  background-color: #4caf50;
+}
+.nes-progress::-ms-fill {
+  background-color: #4caf50;
+  border: none;
+}
+
+/* DARK MODE — specifically for containers using `is-dark` */
+.nes-container.is-dark .nes-progress {
+  background-color: #2a2a2a !important;
+  color: #f5f5f5;
+  border-image: url("data:image/svg+xml;utf8,<svg%20version='1.1'%20width='5'%20height='5'%20xmlns='http://www.w3.org/2000/svg'><path%20d='M2%201%20h1%20v1%20h-1%20z%20M1%202%20h1%20v1%20h-1%20z%20M3%202%20h1%20v1%20h-1%20z%20M2%203%20h1%20v1%20h-1%20z'%20fill='rgb(255,255,255)'/></svg>") 2 / 2 / 2 !important;
+}
+
+.nes-container.is-dark .nes-progress::-webkit-progress-bar {
+  background-color: #2a2a2a !important;
+}
+.nes-container.is-dark .nes-progress::-webkit-progress-value {
+  background-color: #4caf50 !important;
+}
+.nes-container.is-dark .nes-progress::-moz-progress-bar {
+  background-color: #4caf50 !important;
+}
+.nes-container.is-dark .nes-progress::-ms-fill {
+  background-color: #4caf50 !important;
+  border: none !important;
 }

@@ -1,8 +1,10 @@
-export default function Contact() {
+import { siteConfig } from "@/config/site";
+
+export default function Contact({ day }: { day: boolean }) {
     return (
-        <section className="nes-container is-dark with-title text-center">
+        <section className={`nes-container is-rounded bg-gray-200 with-title  ${day ? "" : "is-dark"}`}>
             <p className="title">💬 CONTACT ME</p>
-            <p>Email me at <a href="mailto:youremail@example.com" className="nes-text is-primary">youremail@example.com</a></p>
+            <p>Email me at <a href={`mailto:${siteConfig.email}`} className="nes-text is-primary">{siteConfig.email}</a></p>
         </section>
     )
 }

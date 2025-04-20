@@ -7,11 +7,11 @@ const skills: Skill[] = [
     { skill: 'TypeScript', level: 7 },
 ]
 
-export default function Skills() {
+export default function Skills({ day }: { day: boolean }) {
     return (
-        <section>
-            <h3 className="nes-text is-success mb-4">✨ SKILLS</h3>
-            {skills.map(skill => <SkillBar key={skill.skill} {...skill} />)}
+        <section className={`nes-container is-rounded bg-gray-200 with-title ${day ? "" : "is-dark"}`}>
+            <p className="title">✨ SKILLS</p>
+            {skills.map(skill => <SkillBar key={skill.skill} skill={skill} day={day} />)}
         </section>
     )
 }
