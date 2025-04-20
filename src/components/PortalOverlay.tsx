@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { siteConfig } from '@/config/site';
 
 interface PortalOverlayProps {
     day: boolean;
@@ -63,7 +64,7 @@ export default function PortalOverlay({ day, onEnter }: PortalOverlayProps) {
                             />
                         </div>
                         <p className="mb-4 font-pixel text-center">
-                            I’m <span className="text-green-700">Manish Tiwari</span>. Explore my blocky world of code!
+                            I’m <span className="text-green-700">{siteConfig.profile.name}</span>. Explore my blocky world of code!
                         </p>
                         <div className="text-center mt-4">
                             <button

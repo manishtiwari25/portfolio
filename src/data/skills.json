@@ -1,0 +1,97 @@
+[
+    {
+        "title": "Technical Skills",
+        "skills": [
+            {
+                "name": "Azure",
+                "icon": "TbBrandAzure",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "AWS",
+                "icon": "TbBrandAws",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "GitHub",
+                "icon": "TbBrandGithub",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "Azure DevOps",
+                "icon": "VscAzureDevops",
+                "library": "react-icons/vsc"
+            },
+            {
+                "name": "C#",
+                "icon": "TbBrandCSharp",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "Golang",
+                "icon": "TbBrandGolang",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "TypeScript",
+                "icon": "TbBrandTypescript",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "Terraform",
+                "icon": "TbBrandTerraform",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "NextJS",
+                "icon": "TbBrandNextjs",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "Powershell",
+                "icon": "TbBrandPowershell",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "Docker",
+                "icon": "TbBrandDocker",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "Kubernetes",
+                "icon": "SiKubernetes",
+                "library": "react-icons/si"
+            },
+            {
+                "name": "Openai",
+                "icon": "TbBrandOpenai",
+                "library": "react-icons/tb"
+            }
+        ]
+    },
+    {
+        "title": "Tools I use",
+        "skills": [
+            {
+                "name": "Postman",
+                "icon": "SiPostman",
+                "library": "react-icons/si"
+            },
+            {
+                "name": "VSCode",
+                "icon": "TbBrandVscode",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "Rider",
+                "icon": "SiRider",
+                "library": "react-icons/si"
+            },
+            {
+                "name": "GitHub Copilot",
+                "icon": "TbBrandGithubCopilot",
+                "library": "react-icons/tb"
+            }
+        ]
+    }
+]

@@ -2,61 +2,77 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ToggleDayNight from './ToggleDayNight';
 import PortalOverlay from './PortalOverlay';
+import Banner from './Banner';
 
-export default function MinecraftLayout({ children }: { children: React.ReactNode }) {
+export default function MinecraftLayout({ children, setDayOrNight }: { children: React.ReactNode, setDayOrNight: any }) {
     const [day, setDay] = useState(true);
     const [isEntered, setIsEntered] = useState(false);
 
-    const cloudCount = 6;
+    const cloudCount = 10;
     const clouds = Array.from({ length: cloudCount }, () => ({
         top: `${Math.random() * 30 + 2}vh`,
-        duration: 30 + Math.random() * 20,
+        duration: 30 + Math.random() * 50,
         delay: Math.random() * 10
     }));
 
     useEffect(() => {
         const hour = new Date().getHours();
         setDay(hour >= 6 && hour < 18);
+        document.documentElement.classList.toggle('dark', !(hour >= 6 && hour < 18));
     }, []);
 
-    const toggleDayNight = () => setDay(prev => !prev);
+    const toggleDayNight = () => {
+        setDay(prev => {
+            const newDay = !prev;
+            document.documentElement.classList.toggle('dark', !newDay);
+            return newDay;
+        });
+    };
+
+    useEffect(() => {
+        setDayOrNight(day);
+    }, [day, setDayOrNight]);
 
     return (
         <motion.div
-            className={`minecraft-world ${day ? 'day' : 'night'} relative min-h-screen flex flex-col overflow-visible z-0`}
+            className={`minecraft-world ${day ? 'day' : 'night'} relative min-h-screen flex flex-col overflow-hidden z-0`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6 }}
         >
+            {isEntered && <Banner day={day} toggleDayNight={toggleDayNight} />}
+
+
             {/* SKY LAYER - Clouds or Stars */}
             <AnimatePresence>
                 {day ? (
-                    clouds.map((cloud, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute w-40 h-12 bg-white opacity-80 rounded-full shadow-md z-10"
-                            style={{ top: cloud.top, left: '-200px' }}
-                            animate={{ left: '110vw' }}
-                            transition={{
-                                duration: cloud.duration,
-                                ease: 'linear',
-                                repeat: Infinity,
-                                delay: cloud.delay,
-                            }}
-                        />
-                    ))
+                    <div className="absolute top-0 left-0 w-full h-120 overflow-hidden pointer-events-none">
+                        {clouds.map((cloud, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-40 h-18 bg-white opacity-80 rounded-full shadow-md z-10"
+                                style={{ top: cloud.top, left: '-200px' }}
+                                animate={{ left: '110vw' }}
+                                transition={{
+                                    duration: cloud.duration,
+                                    ease: 'linear',
+                                    repeat: Infinity,
+                                    delay: cloud.delay,
+                                }}
+                            />
+                        ))}
+                    </div>
                 ) : (
                     <motion.div
-                        className="absolute top-0 left-0 w-full h-32 z-10"
+                        className="absolute top-0 left-0 w-full h-120 z-10 overflow-hidden pointer-events-none"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        {[...Array(25)].map((_, i) => (
+                        {[...Array(90)].map((_, i) => (
                             <motion.div
                                 key={i}
                                 className="absolute w-1.5 h-1.5 bg-white rounded-full"
@@ -73,17 +89,21 @@ export default function MinecraftLayout({ children }: { children: React.ReactNod
                 )}
             </AnimatePresence>
 
-            {/* Toggle Button */}
-            {isEntered && <ToggleDayNight day={day} toggle={toggleDayNight} />}
-
             {/* Portal Overlay */}
-            {!isEntered && <PortalOverlay day={day} onEnter={() => {
-                setIsEntered(true);
-            }} />}
+            {!isEntered && (
+                <div className="border-none">
+                    <PortalOverlay
+                        day={day}
+                        onEnter={() => {
+                            setIsEntered(true);
+                        }}
+                    />
+                </div>
+            )}
 
             {/* CONTENT */}
             {isEntered && (
-                <main className="relative z-20 px-4 py-8">{children}</main>
+                <div className="relative z-20 px-4 py-8">{children}</div>
             )}
 
             {/* FOOTER */}

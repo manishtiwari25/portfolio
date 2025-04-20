@@ -1,4 +1,10 @@
+export interface SkillItem {
+    name: string;
+    icon: string;
+    library: string;
+}
+
 export interface Skill {
-    skill: string
-    level: number
+    title: string;
+    skills: SkillItem[];
 }
