@@ -4,89 +4,93 @@
         "skills": [
             {
                 "name": "Azure",
-                "level": 6
+                "icon": "TbBrandAzure",
+                "library": "react-icons/tb"
             },
             {
                 "name": "AWS",
-                "level": 9
+                "icon": "TbBrandAws",
+                "library": "react-icons/tb"
             },
             {
                 "name": "GitHub",
-                "level": 6
+                "icon": "TbBrandGithub",
+                "library": "react-icons/tb"
             },
             {
                 "name": "Azure DevOps",
-                "level": 10
+                "icon": "VscAzureDevops",
+                "library": "react-icons/vsc"
             },
             {
                 "name": "C#",
-                "level": 7
+                "icon": "TbBrandCSharp",
+                "library": "react-icons/tb"
             },
             {
                 "name": "Golang",
-                "level": 6
+                "icon": "TbBrandGolang",
+                "library": "react-icons/tb"
+            },
+            {
+                "name": "TypeScript",
+                "icon": "TbBrandTypescript",
+                "library": "react-icons/tb"
             },
             {
                 "name": "Terraform",
-                "level": 7
+                "icon": "TbBrandTerraform",
+                "library": "react-icons/tb"
             },
             {
                 "name": "NextJS",
-                "level": 6
+                "icon": "TbBrandNextjs",
+                "library": "react-icons/tb"
             },
             {
                 "name": "Powershell",
-                "level": 7
+                "icon": "TbBrandPowershell",
+                "library": "react-icons/tb"
             },
             {
                 "name": "Docker",
-                "level": 5
+                "icon": "TbBrandDocker",
+                "library": "react-icons/tb"
             },
             {
-                "name": "k8s",
-                "level": 3
+                "name": "Kubernetes",
+                "icon": "SiKubernetes",
+                "library": "react-icons/si"
+            },
+            {
+                "name": "Openai",
+                "icon": "TbBrandOpenai",
+                "library": "react-icons/tb"
             }
         ]
     },
     {
-        "title": "Soft Skills",
+        "title": "Tools I use",
         "skills": [
             {
-                "name": "Collaboration",
-                "level": 7
+                "name": "Postman",
+                "icon": "SiPostman",
+                "library": "react-icons/si"
             },
             {
-                "name": "Problem-solving",
-                "level": 8
+                "name": "VSCode",
+                "icon": "TbBrandVscode",
+                "library": "react-icons/tb"
             },
             {
-                "name": "Communication",
-                "level": 6
+                "name": "Rider",
+                "icon": "SiRider",
+                "library": "react-icons/si"
             },
             {
-                "name": "Time management",
-                "level": 7
-            },
-            {
-                "name": "Result-oriented",
-                "level": 7
-            }
-        ]
-    },
-    {
-        "title": "Additional Skills",
-        "skills": [
-            {
-                "name": "Public Speaking",
-                "level": 6
-            },
-            {
-                "name": "Writing",
-                "level": 6
-            },
-            {
-                "name": "Research",
-                "level": 10
+                "name": "GitHub Copilot",
+                "icon": "TbBrandGithubCopilot",
+                "library": "react-icons/tb"
             }
         ]
     }

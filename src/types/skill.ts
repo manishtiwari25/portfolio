@@ -1,9 +1,10 @@
 export interface SkillItem {
     name: string;
-    level: number; // 0 to 100 for progress bars
+    icon: string;
+    library: string;
 }
 
-export interface SkillGroup {
+export interface Skill {
     title: string;
     skills: SkillItem[];
 }

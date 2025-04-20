@@ -10,10 +10,10 @@ import contactData from '@/data/contact.json';
 import workData from '@/data/work.json';
 import projectDate from '@/data/projects.json';
 
-import type { SkillGroup } from '@/types/skill';
+import type { Skill } from '@/types/skill';
 import { Work } from '@/types/work';
 
-const skills: SkillGroup[] = JSON.parse(JSON.stringify(skillData)) as SkillGroup[];
+const skills: Skill[] = JSON.parse(JSON.stringify(skillData)) as Skill[];
 const profile: Profile = JSON.parse(JSON.stringify(profileData)) as Profile;
 const education: Education[] = JSON.parse(JSON.stringify(educationData)) as Education[];
 const contact: Contact = JSON.parse(JSON.stringify(contactData)) as Contact;
