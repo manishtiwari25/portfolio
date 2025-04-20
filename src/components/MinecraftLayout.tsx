@@ -98,7 +98,7 @@ export default function MinecraftLayout({ children, setDayOrNight }: { children:
                 </div>
             )}
             {isEntered && (
-                <div className="relative z-20 px-4 py-8">{children}</div>
+                <div className="relative z-20 pt-8">{children}</div>
             )}
             {isEntered && (
                 <footer className="p-4 text-white z-20 relative">
