@@ -17,7 +17,7 @@ const Skills = ({ day }: { day: boolean }) => {
     };
 
     return (
-        <div>
+        <div className="flex flex-col gap-4">
             {siteConfig.skills.map((skillGroup) => (
                 <div key={skillGroup.title} className={`nes-container with-title is-rounded bg-gray-200 ${day ? "" : "is-dark"}`}>
                     <p className="title">{skillGroup.title}</p>
