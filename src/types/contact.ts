@@ -1,8 +1,8 @@
 export interface Contact {
-    email: string | null;
-    phone: string | null;
-    location: string | null;
-    website: string | null;
-    github: string | null;
-    linkedin: string | null;
+    email: string;
+    phone: string;
+    location: string;
+    website: string;
+    github: string;
+    linkedin: string;
 }

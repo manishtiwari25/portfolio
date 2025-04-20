@@ -86,3 +86,7 @@
   background-color: #4caf50 !important;
   border: none !important;
 }
+
+.bg-opacity-90 {
+  background-color: rgba(31, 41, 55, 0.9); /* Adjust the color and opacity as needed */
+}

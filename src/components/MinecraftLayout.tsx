@@ -2,17 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ToggleDayNight from './ToggleDayNight';
 import PortalOverlay from './PortalOverlay';
+import Banner from './Banner';
 
 export default function MinecraftLayout({ children, setDayOrNight }: { children: React.ReactNode, setDayOrNight: any }) {
     const [day, setDay] = useState(true);
     const [isEntered, setIsEntered] = useState(false);
 
-    const cloudCount = 6;
+    const cloudCount = 10;
     const clouds = Array.from({ length: cloudCount }, () => ({
         top: `${Math.random() * 30 + 2}vh`,
-        duration: 30 + Math.random() * 20,
+        duration: 30 + Math.random() * 50,
         delay: Math.random() * 10
     }));
 
@@ -42,14 +42,17 @@ export default function MinecraftLayout({ children, setDayOrNight }: { children:
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6 }}
         >
+            {isEntered && <Banner day={day} toggleDayNight={toggleDayNight} />}
+
+
             {/* SKY LAYER - Clouds or Stars */}
             <AnimatePresence>
                 {day ? (
-                    <div className="absolute top-0 left-0 w-full h-60 overflow-hidden pointer-events-none">
+                    <div className="absolute top-0 left-0 w-full h-120 overflow-hidden pointer-events-none">
                         {clouds.map((cloud, i) => (
                             <motion.div
                                 key={i}
-                                className="absolute w-40 h-12 bg-white opacity-80 rounded-full shadow-md z-10"
+                                className="absolute w-40 h-18 bg-white opacity-80 rounded-full shadow-md z-10"
                                 style={{ top: cloud.top, left: '-200px' }}
                                 animate={{ left: '110vw' }}
                                 transition={{
@@ -63,13 +66,13 @@ export default function MinecraftLayout({ children, setDayOrNight }: { children:
                     </div>
                 ) : (
                     <motion.div
-                        className="absolute top-0 left-0 w-full h-32 z-10 overflow-hidden pointer-events-none"
+                        className="absolute top-0 left-0 w-full h-120 z-10 overflow-hidden pointer-events-none"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        {[...Array(25)].map((_, i) => (
+                        {[...Array(90)].map((_, i) => (
                             <motion.div
                                 key={i}
                                 className="absolute w-1.5 h-1.5 bg-white rounded-full"
@@ -86,12 +89,9 @@ export default function MinecraftLayout({ children, setDayOrNight }: { children:
                 )}
             </AnimatePresence>
 
-            {/* Toggle Button */}
-            {isEntered && <ToggleDayNight day={day} toggle={toggleDayNight} />}
-
             {/* Portal Overlay */}
             {!isEntered && (
-                <div className="border-4 border-black">
+                <div className="border-none">
                     <PortalOverlay
                         day={day}
                         onEnter={() => {
