@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PortalOverlay from './PortalOverlay';
 import Banner from './Banner';
+import { FaRegCopyright } from 'react-icons/fa';
+import { siteConfig } from '@/config/site';
 
 export default function MinecraftLayout({ children, setDayOrNight }: { children: React.ReactNode, setDayOrNight: any }) {
     const [day, setDay] = useState(true);
@@ -43,9 +45,6 @@ export default function MinecraftLayout({ children, setDayOrNight }: { children:
             transition={{ duration: 0.6 }}
         >
             {isEntered && <Banner day={day} toggleDayNight={toggleDayNight} />}
-
-
-            {/* SKY LAYER - Clouds or Stars */}
             <AnimatePresence>
                 {day ? (
                     <div className="absolute top-0 left-0 w-full h-120 overflow-hidden pointer-events-none">
@@ -88,8 +87,6 @@ export default function MinecraftLayout({ children, setDayOrNight }: { children:
                     </motion.div>
                 )}
             </AnimatePresence>
-
-            {/* Portal Overlay */}
             {!isEntered && (
                 <div className="border-none">
                     <PortalOverlay
@@ -100,16 +97,18 @@ export default function MinecraftLayout({ children, setDayOrNight }: { children:
                     />
                 </div>
             )}
-
-            {/* CONTENT */}
             {isEntered && (
                 <div className="relative z-20 px-4 py-8">{children}</div>
             )}
-
-            {/* FOOTER */}
             {isEntered && (
-                <footer className="text-center py-4 text-white font-pixel z-20 relative">
-                    <p>{day ? '☀️ Daytime' : '🌙 Night Time'}</p>
+                <footer className="p-4 text-white z-20 relative">
+                    <div className="flex justify-between">
+                        <span className="flex gap-2 items-center"><FaRegCopyright /> <i className="font-bold">{siteConfig.name}</i> {new Date().getFullYear()}</span>
+                        <span className="flex gap-3">
+                            <span>{day ? '☀️' : '🌙'}</span>
+                            <span>{day ? 'Daytime' : 'Night Time'}</span>
+                        </span>
+                    </div>
                 </footer>
             )}
         </motion.div>

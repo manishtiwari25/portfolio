@@ -8,14 +8,12 @@ type ToggleDayNightProps = {
 
 export default function ToggleDayNight({ day, toggle }: ToggleDayNightProps) {
     return (
-        <div className="top-4 right-4">
-            <button
-                type="button"
-                onClick={toggle}
-                className="nes-btn is-warning px-4 py-2 shadow-md"
-            >
-                {day ? <FaMoon className="pixelated" /> : <FaSun className="pixelated" />}
-            </button>
-        </div>
+        <button
+            type="button"
+            onClick={toggle}
+            className="bg-yellow-600 p-1 border-solid rounded text-white hover:bg-yellow-700 transition duration-300 shadow-md"
+        >
+            {day ? <FaMoon className="pixelated" /> : <FaSun className="pixelated" />}
+        </button>
     );
 }

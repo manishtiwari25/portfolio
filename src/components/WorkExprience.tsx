@@ -24,6 +24,7 @@ function WorkCard({ job, day }: { job: Work, day: boolean }) {
     const [open, setOpen] = useState(false)
     return (
         <motion.article
+            id="work"
             layout
             className={`relative nes-container is-rounded with-title p-4 flex flex-col justify-between pb-12 ${day ? 'bg-white text-gray-900' : 'is-dark text-gray-100'}`}
         >

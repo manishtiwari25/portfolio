@@ -3,7 +3,7 @@ import GitHubCalendar from "react-github-calendar";
 
 export const GitHub = ({ day }: { day: boolean }) => {
     return (
-        <section className={`nes-container is-rounded bg-gray-200 with-title  ${day ? "" : "is-dark"}`}>
+        <section id="github" className={`nes-container is-rounded bg-gray-200 with-title  ${day ? "" : "is-dark"}`}>
             <p className="title"> Days I <span className="font-bold">Code</span></p>
             <GitHubCalendar
                 username={siteConfig.contact.github}

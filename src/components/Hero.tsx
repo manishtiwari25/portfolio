@@ -5,7 +5,7 @@ export default function Hero({ day }: { day: boolean }) {
     return (
         <section className={`nes-container with-title is-rounded bg-gray-200 ${day ? "" : "is-dark"}`
         }>
-            <p className="title">Hey, I'm {siteConfig.profile.name}!</p>
+            <p className="title">Welcome to my pixel-perfect portfolio.</p>
             <div className='flex flex-col items-center'>
                 <Image
                     src="/manish-minecraft-skin.png"
@@ -14,7 +14,7 @@ export default function Hero({ day }: { day: boolean }) {
                     className="pixelated"
                     alt="Avatar"
                 />
-                <p className="mt-4">Welcome to my pixel-perfect portfolio.</p>
+                <p>{siteConfig.profile.summary}</p>
             </div>
         </section >
     )
