@@ -1,0 +1,93 @@
+[
+    {
+        "title": "Technical Skills",
+        "skills": [
+            {
+                "name": "Azure",
+                "level": 6
+            },
+            {
+                "name": "AWS",
+                "level": 9
+            },
+            {
+                "name": "GitHub",
+                "level": 6
+            },
+            {
+                "name": "Azure DevOps",
+                "level": 10
+            },
+            {
+                "name": "C#",
+                "level": 7
+            },
+            {
+                "name": "Golang",
+                "level": 6
+            },
+            {
+                "name": "Terraform",
+                "level": 7
+            },
+            {
+                "name": "NextJS",
+                "level": 6
+            },
+            {
+                "name": "Powershell",
+                "level": 7
+            },
+            {
+                "name": "Docker",
+                "level": 5
+            },
+            {
+                "name": "k8s",
+                "level": 3
+            }
+        ]
+    },
+    {
+        "title": "Soft Skills",
+        "skills": [
+            {
+                "name": "Collaboration",
+                "level": 7
+            },
+            {
+                "name": "Problem-solving",
+                "level": 8
+            },
+            {
+                "name": "Communication",
+                "level": 6
+            },
+            {
+                "name": "Time management",
+                "level": 7
+            },
+            {
+                "name": "Result-oriented",
+                "level": 7
+            }
+        ]
+    },
+    {
+        "title": "Additional Skills",
+        "skills": [
+            {
+                "name": "Public Speaking",
+                "level": 6
+            },
+            {
+                "name": "Writing",
+                "level": 6
+            },
+            {
+                "name": "Research",
+                "level": 10
+            }
+        ]
+    }
+]
