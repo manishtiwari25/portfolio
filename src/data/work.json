@@ -1,1 +1,71 @@
-[]
+[
+    {
+        "company": "Telefonica Deutschland",
+        "position": "Cloud Engineer",
+        "startDate": "2024-02-01",
+        "endDate": "",
+        "summary": "Telefonica Deutschland is one of the major telecom providers in Germany.",
+        "highlights": [
+            "Working on Landing Zone AI engine using Semantic Kernel",
+            "Designed and developed ChatBot using Azure Open, Langchain in private cloud",
+            "Develop POCs on infrastructure automation using Azure OpenAI and LangChain.",
+            "Contribute to Azure AI policies, aiding security in whitelisting services for application teams.",
+            "Design a self-service portal for infrastructure provisioning, reducing delivery time from 4 days to 1 day and achieving 100% automation.",
+            "Design automated scripts to identify unused or underutilized resources on Azure and shut them down during oﬀ-business hours."
+        ]
+    },
+    {
+        "company": "Trivago",
+        "position": "Software Engineer",
+        "startDate": "2022-02-01",
+        "endDate": "2024-01-31",
+        "summary": "Trivago is a leading global accommodation search website.",
+        "highlights": [
+            "Created and maintained 10+ serverless applications for Finance users.",
+            "Ensured 80% fulfillment of user expectations, achieving a 99% SLA.",
+            "Created and analyzed over 80% unit test cases coverage.",
+            "Developed Terraform scripts to automate infrastructure creation, reducing creation time by 70%.",
+            "Developed deployment pipelines in Azure DevOps and GitHub.",
+            "Optimized Azure resource usage, saving up to €3,000 monthly.",
+            "Developed an automated Zendesk ticket segregator using Azure CLU service.",
+            "Developed an AI Assistant using LangChain, saving on Microsoft Copilot license costs."
+        ]
+    },
+    {
+        "company": "Trinetium DMCC",
+        "position": "Software Engineer",
+        "startDate": "2020-06-08",
+        "endDate": "2021-11-08",
+        "summary": "Trinetium is an online B2B Travel Company that specialises in developing software solutions for B2B travel agencies.",
+        "highlights": [
+            "Implemented application architecture strategy, improving alignment between technology initiatives and business goals by 15%.",
+            "Mitigated critical infrastructure vulnerabilities, reducing security risks by 30%.",
+            "Developed APIs and data clients, enhancing data access efficiency and reducing retrieval time by 25%.",
+            "Designed and implemented EKS from scratch and adopted DevOps practices."
+        ]
+    },
+    {
+        "company": "McAfee",
+        "position": "Software Engineer",
+        "startDate": "2019-12-08",
+        "endDate": "2020-03-08",
+        "summary": "McAfee is a worldwide leader in online protection.",
+        "highlights": [
+            "Participated in team meetings, contributing ideas and suggestions for project innovation and success.",
+            "Provided consistent updates on project deadlines, design considerations, and potential enhancements.",
+            "Delivered products on time, enhancing project timelines and customer satisfaction while bolstering security measures to safeguard sensitive data."
+        ]
+    },
+    {
+        "company": "Kerv Digital",
+        "position": "Software Engineer",
+        "startDate": "2017-10-08",
+        "endDate": "2019-11-08",
+        "summary": "Kerv Digital provides a software solution provider.",
+        "highlights": [
+            "Achieved 20% faster project integration via Azure and Azure DevOps.",
+            "Streamlined processes by collaborating across teams, resulting in a 30% efficiency gain.",
+            "Enhanced data integration by 20% via APIs and data clients."
+        ]
+    }
+]

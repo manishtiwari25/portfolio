@@ -5,4 +5,6 @@ export interface Contact {
     website: string;
     github: string;
     linkedin: string;
+    medium: string;
+    blog: string;
 }

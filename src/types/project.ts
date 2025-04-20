@@ -1,6 +1,7 @@
 export interface Project {
     name: string;
     description: string;
-    url?: string;
+    repoUrl?: string;
+    playStoreUrl?: string;
     technologies?: string[];
 }

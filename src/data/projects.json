@@ -1,1 +1,66 @@
-[]
+[
+    {
+        "name": "Ferret",
+        "description": "Automate the syndication of RSS feed posts to various social media platforms seamlessly with Ferret. Simplify your content distribution process and reach your audience effortlessly.",
+        "repoUrl": "https://github.com/bitesinbyte/ferret",
+        "technologies": [
+            "Go"
+        ]
+    },
+    {
+        "name": "Leben in Deutschland App",
+        "description": "Mobile app & web portal to master Germany’s naturalization test with real‑world practice questions and progress tracking.",
+        "repoUrl": "https://github.com/leben-in-deutschland/leben-in-deutschland-app",
+        "playStoreUrl": "https://play.google.com/store/apps/details?id=org.lebenindeutschland.app&pli=1",
+        "technologies": [
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
+        "name": "Azure Draw‑IO Assets",
+        "description": "A curated collection of Microsoft Azure icons and shapes for Draw.io—keep your architecture diagrams fresh with the latest official assets.",
+        "repoUrl": "https://github.com/bitesinbyte/azure-draw-io-assets",
+        "technologies": [
+            "Go"
+        ]
+    },
+    {
+        "name": "Resume Builder",
+        "description": "ATS‑optimized resume generator built in TypeScript & React—craft shareable, recruiter‑friendly CVs with a click.",
+        "repoUrl": "https://github.com/bitesinbyte/resume-builder",
+        "technologies": [
+            "TypeScript",
+            "React",
+            "Next.js"
+        ]
+    },
+    {
+        "name": "Links Organizer",
+        "description": "Easy social‑link manager in TypeScript—collect and share all your online profiles from a single dashboard.",
+        "repoUrl": "https://github.com/bitesinbyte/links",
+        "technologies": [
+            "TypeScript"
+        ]
+    },
+    {
+        "name": "AI Playground",
+        "description": "Interactive AI experimentation space: spin up ONNX models, RAG flows with LangChain.js, and mobile‑friendly inference demos.",
+        "repoUrl": "https://github.com/manishtiwari25/playground",
+        "technologies": [
+            "TypeScript",
+            "ONNX",
+            "LangChain.js",
+            "HuggingFace"
+        ]
+    },
+    {
+        "name": "Secure Azure Infra (Terraform)",
+        "description": "Production‑ready Terraform modules and best practices for locking down Azure environments with zero‑trust principles.",
+        "repoUrl": "https://github.com/manishtiwari25/secure-azure-infra-terraform",
+        "technologies": [
+            "Terraform",
+            "Azure"
+        ]
+    }
+]

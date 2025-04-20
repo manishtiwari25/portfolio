@@ -8,6 +8,7 @@ import MinecraftLayout from '@/components/MinecraftLayout';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { GitHub } from '@/components/GitHub';
+import WorkExprience from '@/components/WorkExprience';
 
 export default function Home() {
   const [day, setDay] = useState(true);
@@ -36,6 +37,7 @@ export default function Home() {
         <Projects day={day} />
         <Skills day={day} />
         <GitHub day={day} />
+        <WorkExprience day={day} />
         <Contact day={day} />
       </div>
       <button
