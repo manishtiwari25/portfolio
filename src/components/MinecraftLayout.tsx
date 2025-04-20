@@ -19,13 +19,20 @@ export default function MinecraftLayout({ children }: { children: React.ReactNod
     useEffect(() => {
         const hour = new Date().getHours();
         setDay(hour >= 6 && hour < 18);
+        document.documentElement.classList.toggle('dark', !(hour >= 6 && hour < 18));
     }, []);
 
-    const toggleDayNight = () => setDay(prev => !prev);
+    const toggleDayNight = () => {
+        setDay(prev => {
+            const newDay = !prev;
+            document.documentElement.classList.toggle('dark', !newDay);
+            return newDay;
+        });
+    };
 
     return (
         <motion.div
-            className={`minecraft-world ${day ? 'day' : 'night'} relative min-h-screen flex flex-col overflow-visible z-0`}
+            className={`minecraft-world ${day ? 'day' : 'night'} relative min-h-screen flex flex-col overflow-hidden z-0`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -34,23 +41,25 @@ export default function MinecraftLayout({ children }: { children: React.ReactNod
             {/* SKY LAYER - Clouds or Stars */}
             <AnimatePresence>
                 {day ? (
-                    clouds.map((cloud, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute w-40 h-12 bg-white opacity-80 rounded-full shadow-md z-10"
-                            style={{ top: cloud.top, left: '-200px' }}
-                            animate={{ left: '110vw' }}
-                            transition={{
-                                duration: cloud.duration,
-                                ease: 'linear',
-                                repeat: Infinity,
-                                delay: cloud.delay,
-                            }}
-                        />
-                    ))
+                    <div className="absolute top-0 left-0 w-full h-60 overflow-hidden pointer-events-none">
+                        {clouds.map((cloud, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-40 h-12 bg-white opacity-80 rounded-full shadow-md z-10"
+                                style={{ top: cloud.top, left: '-200px' }}
+                                animate={{ left: '110vw' }}
+                                transition={{
+                                    duration: cloud.duration,
+                                    ease: 'linear',
+                                    repeat: Infinity,
+                                    delay: cloud.delay,
+                                }}
+                            />
+                        ))}
+                    </div>
                 ) : (
                     <motion.div
-                        className="absolute top-0 left-0 w-full h-32 z-10"
+                        className="absolute top-0 left-0 w-full h-32 z-10 overflow-hidden pointer-events-none"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -77,9 +86,16 @@ export default function MinecraftLayout({ children }: { children: React.ReactNod
             {isEntered && <ToggleDayNight day={day} toggle={toggleDayNight} />}
 
             {/* Portal Overlay */}
-            {!isEntered && <PortalOverlay day={day} onEnter={() => {
-                setIsEntered(true);
-            }} />}
+            {!isEntered && (
+                <div className="border-4 border-black">
+                    <PortalOverlay
+                        day={day}
+                        onEnter={() => {
+                            setIsEntered(true);
+                        }}
+                    />
+                </div>
+            )}
 
             {/* CONTENT */}
             {isEntered && (
