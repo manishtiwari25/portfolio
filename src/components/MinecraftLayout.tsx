@@ -103,10 +103,10 @@ export default function MinecraftLayout({ children, setDayOrNight }: { children:
             {isEntered && (
                 <footer className="p-4 text-white z-20 relative">
                     <div className="flex justify-between">
-                        <span className="flex gap-2 items-center"><FaRegCopyright /> <i className="font-bold">{siteConfig.name}</i> {new Date().getFullYear()}</span>
+                        <span className="flex gap-2 items-center text-[6px] md:text-sm"><FaRegCopyright /> <i className="font-bold">{siteConfig.name}</i> {new Date().getFullYear()}</span>
                         <span className="flex gap-3">
-                            <span>{day ? '☀️' : '🌙'}</span>
-                            <span>{day ? 'Daytime' : 'Night Time'}</span>
+                            <span className="text-[6px] md:text-sm">{day ? '☀️' : '🌙'}</span>
+                            <span className="text-[6px] md:text-sm">{day ? 'Daytime' : 'Night Time'}</span>
                         </span>
                     </div>
                 </footer>
