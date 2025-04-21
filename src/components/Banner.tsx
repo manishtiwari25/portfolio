@@ -58,8 +58,8 @@ export default function Banner({ day, toggleDayNight }: { day: boolean; toggleDa
             <div className="flex justify-between items-center w-full md:w-auto">
                 <div className="content-start">
                     <div className="flex flex-col">
-                        <span className="font-extrabold text-lg md:text-xl">{siteConfig.profile.name}</span>
-                        <i className="font-bold text-xs md:text-sm">{siteConfig.profile.tagline}</i>
+                        <span className="font-extrabold text-sm md:text-lg">{siteConfig.profile.name}</span>
+                        <i className="font-bold text-[6px] md:text-sm">{siteConfig.profile.tagline}</i>
                     </div>
                 </div>
                 <div className="content-end flex gap-2 md:hidden">
@@ -80,7 +80,7 @@ export default function Banner({ day, toggleDayNight }: { day: boolean; toggleDa
                     <a
                         key={link.id}
                         href={`#${link.id}`}
-                        className="text-white text-lg hover:underline"
+                        className="text-white text-xs"
                         onClick={(e) => handleLinkClick(e, link.id)}
                     >
                         {link.label}
@@ -114,7 +114,7 @@ export default function Banner({ day, toggleDayNight }: { day: boolean; toggleDa
                         <a
                             key={link.id}
                             href={`#${link.id}`}
-                            className="text-white text-lg hover:underline"
+                            className="text-white text-xs"
                             onClick={(e) => handleLinkClick(e, link.id)}
                         >
                             {link.label}
