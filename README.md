@@ -7,7 +7,7 @@ A playful, pixelated portfolio site built with Next.js, TypeScript, Tailwind CSS
 ## 📺 Demo
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/a6a02e28-7688-43a6-83f3-2353a313fa14" controls width="640" poster="https://raw.githubusercontent.com/manishtiwari25/portfolio/refs/heads/main/.github/assets/demo.png">
+  <video src="https://github.com/user-attachments/assets/bcb7ee15-ceff-4cc9-9229-a1c92719c6de" controls width="640" poster="https://raw.githubusercontent.com/manishtiwari25/portfolio/refs/heads/main/.github/assets/demo.png">
     Your browser does not support the video tag.
   </video>
 </div>
