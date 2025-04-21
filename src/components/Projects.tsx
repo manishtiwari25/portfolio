@@ -54,7 +54,7 @@ export default function Projects({ day }: { day: boolean; }) {
                                             {p.technologies.map((tech) => (
                                                 <span
                                                     key={tech}
-                                                    className="text-xs px-2 py-1 bg-gray-300 dark:bg-gray-700 rounded"
+                                                    className="text-xs px-2 py-1 bg-gray-300 rounded text-black"
                                                 >
                                                     {tech}
                                                 </span>
