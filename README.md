@@ -1,4 +1,4 @@
-# Minecraft Portfolio Animations
+# Portfolio
 
 A playful, pixelated portfolio site built with Next.js, TypeScript, Tailwind CSS, NES.css, and Framer Motion. This project transforms your professional work experience and open-source projects into an interactive, retro-inspired experience with smooth animations and light/dark themes.
 
