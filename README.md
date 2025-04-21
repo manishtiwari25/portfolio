@@ -7,8 +7,7 @@ A playful, pixelated portfolio site built with Next.js, TypeScript, Tailwind CSS
 ## 📺 Demo
 
 <div align="center">
-  <!-- Example: You can embed a video or an animated GIF here -->
-  <video src="./.github/assets/demo.mov" controls width="640" poster="./.github/assets/demo.png">
+  <video src="https://github.com/user-attachments/assets/a6a02e28-7688-43a6-83f3-2353a313fa14" controls width="640" poster="https://raw.githubusercontent.com/manishtiwari25/portfolio/refs/heads/main/.github/assets/demo.png">
     Your browser does not support the video tag.
   </video>
 </div>
