@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import GitHubCalendar from "react-github-calendar";
+import { GitHubCalendar } from "react-github-calendar";
 
 export const GitHub = ({ day }: { day: boolean }) => {
     return (
@@ -10,7 +10,7 @@ export const GitHub = ({ day }: { day: boolean }) => {
                 blockSize={20}
                 blockMargin={7}
                 fontSize={25}
-                hideTotalCount
+                showTotalCount={false}
                 theme={{
                     light: ['white', 'black'],
                     dark: ['gray', 'rgb(214, 16, 174)']

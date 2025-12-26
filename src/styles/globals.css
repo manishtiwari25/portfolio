@@ -1,5 +1,124 @@
 @import "tailwindcss";
-@import "../../node_modules/nes.css/css/nes.css";
+
+/* Custom NES.css replacement styles */
+.nes-container {
+  position: relative;
+  border: 4px solid #212529;
+  border-radius: 0;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #fff;
+}
+
+.nes-container.is-dark {
+  border-color: #fff;
+  background-color: #212529;
+  color: #fff;
+}
+
+.nes-container.is-rounded {
+  border-radius: 8px;
+}
+
+.nes-container.with-title {
+  padding-top: 2rem;
+}
+
+.nes-container.with-title > .title {
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+  background-color: inherit;
+  padding: 0 0.5rem;
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: inherit;
+}
+
+.nes-container.is-centered {
+  text-align: center;
+}
+
+.nes-btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 4px solid #212529;
+  border-radius: 0;
+  background-color: #e9ecef;
+  color: #212529;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.nes-btn:hover {
+  filter: brightness(0.95);
+  transform: translateY(1px);
+}
+
+.nes-btn:active {
+  transform: translateY(2px);
+  filter: brightness(0.9);
+}
+
+.nes-btn.is-primary {
+  background-color: #007bff;
+  border-color: #0056b3;
+  color: #fff;
+}
+
+.nes-btn.is-success {
+  background-color: #28a745;
+  border-color: #1e7e34;
+  color: #fff;
+}
+
+.nes-btn.is-error {
+  background-color: #dc3545;
+  border-color: #c82333;
+  color: #fff;
+}
+
+.nes-btn.is-small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.nes-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.nes-list.is-circle {
+  padding-left: 1rem;
+}
+
+.nes-list.is-circle li {
+  position: relative;
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+}
+
+.nes-list.is-circle li::before {
+  content: "●";
+  position: absolute;
+  left: -0.5rem;
+  color: #212529;
+}
+
+.nes-text.is-primary {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Dark mode adjustments */
+.nes-container.is-dark .nes-list.is-circle li::before {
+  color: #fff;
+}
 
 .minecraft-world.day {
   background-image: linear-gradient(
